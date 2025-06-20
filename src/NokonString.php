@@ -24,7 +24,7 @@ class NokonString extends ScalarBuilder
      */
     public function toUpperCase(): NokonString
     {
-        $this->value = strtoupper($this->value);
+        $this->value = mb_strtoupper($this->value);
         return $this;
     }
 
@@ -34,7 +34,7 @@ class NokonString extends ScalarBuilder
      */
     public function toLowerCase(): NokonString
     {
-        $this->value = strtolower($this->value);
+        $this->value = mb_strtolower($this->value);
         return $this;
     }
 
@@ -62,5 +62,16 @@ class NokonString extends ScalarBuilder
         return $this;
     }
 
+    /**
+     * Pad both side of the string (left, right)
+     * @param int $length desired length of the string
+     * @param string $padString filling string
+     * @return $this current instance
+     */
+    public function bothPad(int $length, string $padString): NokonString
+    {
+        $this->value = str_pad($this->value, $length, $padString, STR_PAD_BOTH);
+        return $this;
+    }
 
 }
