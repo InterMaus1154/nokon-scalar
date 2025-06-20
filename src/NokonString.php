@@ -9,16 +9,18 @@ class NokonString extends ScalarBuilder
         parent::__construct($value);
     }
 
-    /*
-     * Return the string value
+    /**
+     * Returns the value of the instance
+     * @return string current value
      */
     public function get(): string
     {
         return (string)$this->value;
     }
 
-    /*
-     * Makes the string all uppercase
+    /**
+     * Makes the string all upper case
+     * @return $this current instance
      */
     public function toUpperCase(): NokonString
     {
@@ -26,8 +28,9 @@ class NokonString extends ScalarBuilder
         return $this;
     }
 
-    /*
-     * Makes the string all lowercase
+    /**
+     * Makes the string all lower case
+     * @return $this current instance
      */
     public function toLowerCase(): NokonString
     {
