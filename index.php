@@ -3,6 +3,8 @@ require "vendor/autoload.php";
 
 use Nokon\NokonScalarTool\NokonString;
 
-$str = "hello world";
-$string = NokonString::build($str)->toUpperCase()->get();
+$str = "1";
+$string = NokonString::build($str)
+    ->leftPad(4, "0")
+    ->get();
 echo $string;
