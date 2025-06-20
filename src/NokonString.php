@@ -35,8 +35,11 @@ class NokonString extends ScalarBuilder
         return $this;
     }
 
-    /*
+    /**
      * Left pad string
+     * @param int $length desired length of the string
+     * @param string $padString filling string
+     * @return $this current instance
      */
     public function leftPad(int $length, string $padString): NokonString
     {
@@ -44,6 +47,17 @@ class NokonString extends ScalarBuilder
         return $this;
     }
 
+    /**
+     * Right pad string
+     * @param int $length desired length of the string
+     * @param string $padString filling string
+     * @return $this current string
+     */
+    public function rightPad(int $length, string $padString): NokonString
+    {
+        $this->value = str_pad($this->value, $length, $padString, STR_PAD_RIGHT);
+        return $this;
+    }
 
 
 }
